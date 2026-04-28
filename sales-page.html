@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Método Gelatina Detox — Protocolo matinal de 3 minutos que ativa o metabolismo feminino e bloqueia o cortisol que acumula gordura">
+    <title>Método Gelatina Detox — Perca Peso Toda Manhã Em 3 Minutos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* === RESET E VARIÁVEIS === */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg: #FAF9FF;
+            --purple: #3D0066;
+            --purple-mid: #6B0099;
+            --pink: #FF2D6B;
+            --green: #00C853;
+            --red: #FF3D00;
+            --white: #ffffff;
+            --gray-bg: #F0EFF8;
+            --gray-text: #666;
+            --text: #1a1a2e;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            padding-top: 52px;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Sora', sans-serif; }
+
+        /* === SCROLLBAR === */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--pink); }
+
+        /* === KEYFRAMES === */
+        @keyframes pulse-green {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0,200,83,0.28); }
+            55%       { box-shadow: 0 0 0 9px rgba(0,200,83,0); }
+        }
+        @keyframes pulse-red-bar {
+            0%, 100% { box-shadow: 0 2px 18px rgba(255,61,0,0.5); }
+            50%       { box-shadow: 0 2px 28px rgba(255,61,0,0.9); }
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50%       { opacity: 0.3; }
+        }
+        @keyframes float-phone {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(-10px); }
+        }
+        @keyframes grow-bar {
+            from { transform: scaleY(0); }
+            to   { transform: scaleY(1); }
+        }
+
+        /* === ANIMAÇÕES DE ENTRADA === */
+        .anim {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+        .anim.in { opacity: 1; transform: translateY(0); }
+        .d1 { transition-delay: 0.10s; }
+        .d2 { transition-delay: 0.20s; }
+        .d3 { transition-delay: 0.30s; }
+        .d4 { transition-delay: 0.40s; }
+        .d5 { transition-delay: 0.50s; }
+        .d6 { transition-delay: 0.60s; }
+        .d7 { transition-delay: 0.70s; }
+
+        /* === UTILITÁRIOS === */
+        .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+        .tag {
+            display: inline-block;
+            font-family: 'Sora', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--pink);
+            margin-bottom: 10px;
+        }
+
+        /* === SEÇÃO 1: BARRA DE URGÊNCIA === */
+        #urgency-bar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: var(--red);
+            color: #fff;
+            text-align: center;
+            padding: 10px 16px;
+            font-family: 'Sora', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            animation: pulse-red-bar 2s infinite;
+        }
+        #urgency-bar .blink { animation: blink 1s infinite; }
+        .cd-pill {
+            background: rgba(0,0,0,0.22);
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        /* === SEÇÃO 2: HEADLINE === */
+        #headline {
+            background: linear-gradient(140deg, var(--purple) 0%, var(--purple-mid) 55%, #2a0044 100%);
+            color: #fff;
+            padding: 64px 20px 56px;
+            text-align: center;
+        }
+        #headline .eyebrow {
+            display: inline-block;
+            background: var(--pink);
+            color: #fff;
+            font-family: 'Sora', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 22px;
+        }
+        #headline h1 {
+            font-size: clamp(1.55rem, 5.5vw, 2.7rem);
+            font-weight: 800;
+            line-height: 1.22;
+            max-width: 880px;
+            margin: 0 auto 22px;
+        }
+        #headline h1 .hl { color: var(--pink); }
+        #headline .sub {
+            font-size: clamp(1rem, 2.8vw, 1.2rem);
+            opacity: 0.9;
+            max-width: 640px;
+            margin: 0 auto 38px;
+            line-height: 1.65;
+            font-weight: 400;
+        }
+        #headline .sub strong { color: #FFD6E7; font-weight: 700; }
+        .sp-bar { margin-top: 20px; font-size: 0.85rem; opacity: 0.75; }
+
+        /* === CTA BUTTON === */
+        .cta {
+            display: inline-block;
+            background: var(--green);
+            color: #fff;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: clamp(0.82rem, 2.2vw, 0.97rem);
+            padding: 13px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            animation: pulse-green 3s infinite;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.18s ease, filter 0.18s ease;
+        }
+        .cta:hover { transform: scale(1.02); filter: brightness(1.07); }
+        .cta.big {
+            font-size: clamp(0.9rem, 2.6vw, 1.08rem);
+            padding: 16px 34px;
+            width: 100%;
+            max-width: 460px;
+            text-align: center;
+        }
+
+        /* === SEÇÃO 3: DOR === */
+        #pain { background: var(--gray-bg); padding: 64px 20px; text-align: center; }
+        #pain h2 { font-size: clamp(1.35rem, 4vw, 2rem); color: var(--purple); margin-bottom: 36px; }
+        .pain-list { list-style: none; max-width: 580px; margin: 0 auto 32px; text-align: left; }
+        .pain-list li {
+            background: #fff;
+            border-left: 4px solid var(--pink);
+            padding: 14px 18px;
+            margin-bottom: 12px;
+            border-radius: 0 10px 10px 0;
+            font-size: 0.97rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+        .pain-list li .xi { font-size: 1.15rem; flex-shrink: 0; }
+        .pain-close {
+            display: inline-block;
+            background: var(--purple);
+            color: #fff;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1.08rem;
+            padding: 16px 28px;
+            border-radius: 12px;
+        }
+
+        /* === SEÇÃO 4: MECANISMO === */
+        #mechanism { padding: 64px 20px; text-align: center; background: #fff; }
+        #mechanism h2 { font-size: clamp(1.35rem, 4vw, 2rem); color: var(--purple); margin-bottom: 12px; }
+        #mechanism .sub2 { color: var(--gray-text); font-size: 1rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .cycle-wrap { max-width: 380px; margin: 0 auto 16px; }
+        .mech-label {
+            font-family: 'Sora', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--pink);
+            margin-bottom: 8px;
+        }
+        .mech-text {
+            max-width: 620px;
+            margin: 28px auto 40px;
+            font-size: 1rem;
+            line-height: 1.75;
+            color: var(--text);
+            text-align: left;
+        }
+        .mech-text strong { color: var(--purple); }
+        .mech-text p + p { margin-top: 14px; }
+        .timeline-wrap { max-width: 660px; margin: 0 auto; overflow-x: auto; }
+
+        /* === SEÇÃO 5: SOLUÇÃO === */
+        #solution {
+            background: linear-gradient(180deg, var(--bg) 0%, #EDE0FF 100%);
+            padding: 64px 20px;
+            text-align: center;
+        }
+        #solution h2 { font-size: clamp(1.35rem, 4vw, 2rem); color: var(--purple); margin-bottom: 40px; }
+        .proto-cards { display: flex; flex-direction: column; gap: 20px; max-width: 700px; margin: 0 auto 52px; }
+        @media (min-width: 768px) { .proto-cards { flex-direction: row; } }
+        .proto-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 30px 22px;
+            flex: 1;
+            box-shadow: 0 6px 24px rgba(61,0,102,0.1);
+            border-top: 4px solid var(--pink);
+            text-align: center;
+        }
+        .proto-card .ci { font-size: 2.6rem; margin-bottom: 12px; display: block; }
+        .proto-card h3 { font-size: 1.05rem; color: var(--purple); margin-bottom: 8px; }
+        .proto-card p { font-size: 0.88rem; color: var(--gray-text); line-height: 1.55; }
+
+        /* Bar chart */
+        .chart-box { max-width: 460px; margin: 0 auto; }
+        .chart-box h3 { font-family: 'Sora', sans-serif; font-size: 0.97rem; color: var(--purple); margin-bottom: 26px; }
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 56px;
+            height: 220px;
+            position: relative;
+            padding-bottom: 28px;
+            padding-top: 32px;
+        }
+        .bar-chart::after {
+            content: '';
+            position: absolute;
+            bottom: 28px; left: 0; right: 0;
+            height: 2px;
+            background: #ddd;
+        }
+        .bar-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            position: relative;
+        }
+        .bar {
+            width: 88px;
+            border-radius: 8px 8px 0 0;
+            transform-origin: center bottom;
+            transform: scaleY(0);
+            transition: transform 1.1s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        .bar.grow { transform: scaleY(1); }
+        .bar.b-low  { height: 80px;  background: linear-gradient(to top, #bbb, #999); }
+        .bar.b-high { height: 160px; background: linear-gradient(to top, var(--green), #4eff91); }
+        .bar-val {
+            font-family: 'Sora', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 700;
+            position: absolute;
+            top: -26px;
+            white-space: nowrap;
+        }
+        .bar-lbl { font-size: 0.73rem; color: var(--gray-text); font-weight: 600; text-align: center; max-width: 100px; }
+
+        /* === SEÇÃO 6: WEBAPP === */
+        #webapp { padding: 64px 20px; text-align: center; background: #fff; }
+        #webapp h2 { font-size: clamp(1.35rem, 4vw, 2rem); color: var(--purple); margin-bottom: 8px; }
+        #webapp .sub3 { color: var(--gray-text); margin-bottom: 44px; font-size: 0.97rem; }
+        .webapp-layout { display: flex; flex-direction: column; align-items: center; gap: 44px; max-width: 940px; margin: 0 auto; }
+        @media (min-width: 768px) { .webapp-layout { flex-direction: row; align-items: flex-start; } }
+
+        /* Phone mockup */
+        .phone {
+            width: 230px;
+            height: 460px;
+            background: var(--purple);
+            border-radius: 38px;
+            padding: 14px 10px;
+            box-shadow: 0 24px 64px rgba(61,0,102,0.35), 0 0 0 8px #1a0033;
+            flex-shrink: 0;
+            animation: float-phone 4s ease-in-out infinite;
+        }
+        .phone-notch { width: 76px; height: 18px; background: #1a0033; border-radius: 0 0 14px 14px; margin: 0 auto 10px; }
+        .phone-screen { background: var(--bg); border-radius: 22px; height: calc(100% - 44px); overflow: hidden; padding: 10px; }
+        .papp-hdr {
+            background: var(--purple);
+            color: #fff;
+            border-radius: 10px;
+            padding: 7px 10px;
+            font-family: 'Sora', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 7px;
+        }
+        .papp-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #fff;
+            border-radius: 8px;
+            padding: 5px 9px;
+            margin-bottom: 5px;
+            font-size: 0.58rem;
+            font-weight: 600;
+            color: var(--purple);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+        }
+        .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+        .dot-g { background: var(--green); }
+        .dot-p { background: var(--pink); }
+        .dot-d { background: var(--purple); }
+        .pbar { background: #e8e8f0; border-radius: 4px; height: 5px; margin-top: 10px; }
+        .pbar-fill { background: linear-gradient(to right, var(--pink), var(--purple)); height: 100%; border-radius: 4px; width: 60%; }
+        .pbar-lbl { font-size: 0.52rem; color: var(--gray-text); margin-top: 3px; text-align: right; }
+        .papp-tag { font-size: 0.55rem; color: var(--pink); font-weight: 700; margin: 6px 0 4px; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Features list */
+        .feat-list { flex: 1; text-align: left; }
+        .feat-list h3 { font-size: 1.15rem; color: var(--purple); margin-bottom: 18px; }
+        .feat-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid #eee; }
+        .feat-item:last-child { border-bottom: none; }
+        .feat-ico { width: 28px; height: 28px; border-radius: 7px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .feat-ico.green { background: #E8FFF0; }
+        .feat-ico.star  { background: #FFF3E0; }
+        .feat-txt strong { display: block; font-family: 'Sora', sans-serif; font-size: 0.88rem; color: var(--purple); margin-bottom: 2px; }
+        .feat-txt span { font-size: 0.78rem; color: var(--gray-text); }
+
+        /* === SEÇÃO 7: PROVA SOCIAL === */
+        #social { background: var(--gray-bg); padding: 64px 20px; text-align: center; }
+        #social h2 { font-size: clamp(1.35rem, 4vw, 2rem); color: var(--purple); margin-bottom: 8px; }
+        #social .sub4 { color: var(--gray-text); margin-bottom: 36px; }
+
+        .test-scroll {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 12px;
+        }
+        .test-scroll::-webkit-scrollbar { height: 4px; }
+        .test-scroll::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 2px; }
+
+        @media (min-width: 768px) {
+            .test-scroll {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                overflow-x: visible;
+                scroll-snap-type: none;
+                max-width: 980px;
+                margin: 0 auto;
+            }
+        }
+
+        .t-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            scroll-snap-align: start;
+            min-width: 290px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            text-align: left;
+        }
+        @media (min-width: 768px) { .t-card { min-width: unset; flex-shrink: unset; } }
+
+        .t-hdr { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+        .avatar {
+            width: 46px; height: 46px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1rem;
+            color: #fff; flex-shrink: 0;
+        }
+        .t-info .tname { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.92rem; color: var(--purple); }
+        .t-info .tcity { font-size: 0.75rem; color: var(--gray-text); }
+        .stars { color: #FFB800; font-size: 0.85rem; margin-bottom: 8px; }
+        .rbadge {
+            background: var(--green); color: #fff;
+            font-family: 'Sora', sans-serif; font-size: 0.72rem; font-weight: 700;
+            padding: 4px 10px; border-radius: 20px;
+            display: inline-block; margin-bottom: 10px;
+        }
+        .t-text { font-size: 0.86rem; line-height: 1.62; color: var(--text); font-style: italic; }
+
+        /* === SEÇÃO 8: OFERTA === */
+        #oferta {
+            background: linear-gradient(140deg, var(--purple) 0%, #5c0099 100%);
+            padding: 72px 20px;
+            text-align: center;
+            color: #fff;
+        }
+        #oferta h2 { font-size: clamp(1.45rem, 4vw, 2.2rem); margin-bottom: 10px; }
+        .offer-sub { opacity: 0.82; margin-bottom: 38px; font-size: 0.97rem; }
+
+        .val-stack {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 16px;
+            padding: 24px;
+            max-width: 460px;
+            margin: 0 auto 32px;
+        }
+        .val-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 9px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.88rem;
+            gap: 12px;
+        }
+        .val-row:last-child { border-bottom: none; padding-top: 14px; margin-top: 4px; }
+        .val-row .vn { opacity: 0.85; text-align: left; }
+        .val-row .vp { font-weight: 700; color: #a8ffb8; white-space: nowrap; }
+
+        .price-box { text-align: center; margin-bottom: 30px; }
+        .price-old { font-size: 1.15rem; text-decoration: line-through; opacity: 0.45; margin-bottom: 4px; }
+        .price-lbl { font-size: 0.82rem; opacity: 0.65; margin-bottom: 4px; }
+        .price-new { font-family: 'Sora', sans-serif; font-size: 3.6rem; font-weight: 800; color: var(--green); line-height: 1; }
+        .price-new sup { font-size: 1.5rem; vertical-align: top; margin-top: 10px; display: inline-block; }
+        .price-new small { font-size: 2rem; }
+        .price-note { margin-top: 8px; font-size: 0.82rem; opacity: 0.6; }
+
+        .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 32px; }
+        .bdg {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.22);
+            border-radius: 9px;
+            padding: 10px 16px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            display: flex; align-items: center; gap: 7px;
+        }
+
+        .cta-wrap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+        .urg-mini { font-size: 0.83rem; opacity: 0.75; display: flex; align-items: center; gap: 6px; }
+        #cd2 { font-weight: 700; color: #FFD700; }
+
+        /* === SEÇÃO 9: GARANTIA — removida === */
+
+        /* === SEÇÃO 10: FAQ === */
+        #faq { padding: 64px 20px; background: var(--gray-bg); }
+        #faq h2 { font-size: clamp(1.35rem, 4vw, 2rem); color: var(--purple); margin-bottom: 32px; text-align: center; }
+        .faq-list { max-width: 720px; margin: 0 auto; }
+        .faq-item { background: #fff; border-radius: 12px; margin-bottom: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); overflow: hidden; }
+        .faq-q {
+            width: 100%; padding: 18px 20px; background: none; border: none;
+            font-family: 'Sora', sans-serif; font-size: 0.93rem; font-weight: 600;
+            color: var(--purple); cursor: pointer; text-align: left;
+            display: flex; justify-content: space-between; align-items: center; gap: 12px;
+            transition: background 0.2s;
+        }
+        .faq-q:hover { background: var(--gray-bg); }
+        .chev { flex-shrink: 0; transition: transform 0.32s; }
+        .faq-item.open .chev { transform: rotate(180deg); }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.42s ease; }
+        .faq-a-inner { padding: 0 20px 20px; font-size: 0.9rem; color: var(--gray-text); line-height: 1.75; }
+
+        /* === SEÇÃO 11: RODAPÉ === */
+        #footer { background: var(--purple); color: rgba(255,255,255,0.55); text-align: center; padding: 36px 20px; font-size: 0.73rem; line-height: 1.75; }
+        .foot-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 16px; }
+        .foot-links a { color: rgba(255,255,255,0.65); text-decoration: none; }
+        .foot-links a:hover { color: #fff; }
+
+        /* === SEÇÃO VSL: PLAYER === */
+        #vsl {
+            background: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .vsl-title {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.1rem, 3.2vw, 1.5rem);
+            color: var(--purple);
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+        @keyframes arrow-bounce {
+            0%, 100% { transform: translateY(0);    opacity: 1; }
+            50%       { transform: translateY(10px); opacity: 0.5; }
+        }
+        .vsl-arrow {
+            display: block;
+            font-size: 2.2rem;
+            color: var(--pink);
+            margin-bottom: 16px;
+            animation: arrow-bounce 1.3s ease-in-out infinite;
+            line-height: 1;
+        }
+        .vsl-player-wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* === MOBILE RESPONSIVIDADE === */
+
+        /* Urgency bar vira 2 linhas em telas estreitas — aumenta padding-top do body */
+        @media (max-width: 479px) {
+            body { padding-top: 70px; }
+            #urgency-bar { font-size: 0.68rem; gap: 4px; padding: 6px 10px; }
+            .cd-pill { font-size: 0.78rem; padding: 2px 8px; }
+        }
+
+        @media (max-width: 767px) {
+            /* Seções — padding vertical reduzido */
+            #headline  { padding: 40px 16px 36px; }
+            #pain      { padding: 48px 16px; }
+            #mechanism { padding: 48px 16px; }
+            #solution  { padding: 48px 16px; }
+            #webapp    { padding: 48px 16px; }
+            #social    { padding: 48px 16px; }
+            #oferta    { padding: 52px 16px; }
+            #faq       { padding: 48px 16px; }
+
+            /* Dor — bloco de fechamento ocupa largura toda */
+            .pain-close {
+                display: block;
+                text-align: center;
+                font-size: 0.92rem;
+                padding: 14px 16px;
+            }
+
+            /* Mecanismo — timeline: scroll horizontal, SVG não encolhe abaixo de legível */
+            .timeline-wrap {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 8px;
+            }
+            .timeline-wrap svg { min-width: 560px; }
+
+            /* Gráfico de barras — gap e largura menores */
+            .bar-chart { gap: 28px; }
+            .bar { width: 70px; }
+
+            /* WebApp — phone ligeiramente menor */
+            .phone { width: 210px; height: 420px; border-radius: 34px; }
+            .phone-screen { border-radius: 18px; }
+
+            /* Recurso list — garante que não transborde */
+            .feat-list { width: 100%; }
+
+            /* Oferta — preço legível mas compacto */
+            .price-new { font-size: 2.8rem; }
+            .price-new sup   { font-size: 1.2rem; margin-top: 6px; }
+            .price-new small { font-size: 1.5rem; }
+
+            /* Val stack — texto que cabe sem overflow */
+            .val-row { font-size: 0.82rem; gap: 8px; }
+            .val-row .vn { flex: 1; min-width: 0; }
+            .val-row .vp { white-space: nowrap; }
+
+            /* Badges — padding menor */
+            .bdg { font-size: 0.73rem; padding: 8px 12px; }
+
+            /* CTA dentro da oferta — padding menor */
+            .cta.big { padding: 15px 22px; }
+
+            /* FAQ — fonte menor, botão mais compacto */
+            .faq-q { font-size: 0.88rem; padding: 15px 16px; }
+            .faq-a-inner { font-size: 0.86rem; }
+
+            /* Rodapé */
+            #footer { padding: 28px 16px; font-size: 0.7rem; }
+            .foot-links { gap: 14px; }
+        }
+
+        /* Telas muito estreitas (≤ 380px) */
+        @media (max-width: 380px) {
+            .bar-chart { gap: 18px; }
+            .bar { width: 58px; }
+            .bar-chart { height: 210px; }
+            .phone { width: 185px; height: 370px; }
+            .val-row { font-size: 0.76rem; }
+            .val-stack { padding: 18px 16px; }
+        }
+    </style>
+    <!-- Vturb — preloads de performance -->
+    <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+    <link rel="preload" href="https://scripts.converteai.net/10ab0ec7-7305-4776-a699-a8b48d7df931/players/69efef19f8f02c85a9b5d446/v4/player.js" as="script">
+    <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+    <link rel="preload" href="https://cdn.converteai.net/10ab0ec7-7305-4776-a699-a8b48d7df931/69efef003fdd3d20d1047563/main.m3u8" as="fetch">
+    <link rel="dns-prefetch" href="https://cdn.converteai.net">
+    <link rel="dns-prefetch" href="https://scripts.converteai.net">
+    <link rel="dns-prefetch" href="https://images.converteai.net">
+    <link rel="dns-prefetch" href="https://api.vturb.com.br">
+</head>
+<body>
+
+<!-- === SEÇÃO 1: BARRA DE URGÊNCIA === -->
+<div id="urgency-bar">
+    <span class="blink">⚠️</span>
+    <span>Oferta de lançamento expira em:</span>
+    <span class="cd-pill" id="cd1">24h 00m 00s</span>
+    <span class="blink">— Garanta agora!</span>
+</div>
+
+<!-- === SEÇÃO 2: HEADLINE === -->
+<section id="headline">
+    <div class="wrap">
+        <div class="anim">
+            <span class="eyebrow">🔥 Protocolo Matinal Feminino — Viral no Brasil</span>
+        </div>
+        <h1 class="anim d1">
+            Médicos Ficaram Em <span class="hl">CHOQUE</span> Ao Descobrir Que Mulheres Acima dos 30
+            Estavam Perdendo Até 7kg Com Este <span class="hl">"Truque da Gelatina"</span>
+            Tomado Toda Manhã Em Jejum
+        </h1>
+        <p class="sub anim d2">
+            O protocolo matinal de 3 minutos que reativa o metabolismo feminino
+            e <strong>BLOQUEIA</strong> o hormônio que acumula gordura na barriga, quadril e braços
+        </p>
+        <div class="anim d3">
+            <a href="https://pay.wiapy.com/MI-xI7yNM5" class="cta">QUERO PERDER PESO AGORA →</a>
+        </div>
+        <p class="sp-bar anim d4">⭐⭐⭐⭐⭐ &nbsp;+12.840 mulheres já transformaram o corpo com este protocolo</p>
+    </div>
+</section>
+
+<!-- === SEÇÃO VSL: PLAYER === -->
+<section id="vsl">
+    <div class="wrap">
+        <p class="vsl-title anim">Assista antes que tire do ar</p>
+        <span class="vsl-arrow anim d1">↓</span>
+        <div class="vsl-player-wrap anim d2">
+            <vturb-smartplayer id="vid-69efef19f8f02c85a9b5d446" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>
+            <script type="text/javascript">var s=document.createElement("script");s.src="https://scripts.converteai.net/10ab0ec7-7305-4776-a699-a8b48d7df931/players/69efef19f8f02c85a9b5d446/v4/player.js",s.async=!0,document.head.appendChild(s);</script>
+        </div>
+    </div>
+</section>
+
+<!-- === SEÇÃO 3: DOR === -->
+<section id="pain">
+    <div class="wrap">
+        <h2 class="anim">Se você chegou até aqui, aposto que...</h2>
+        <ul class="pain-list">
+            <li class="anim d1"><span class="xi">❌</span><span>Já tentou dietas e sempre engordou de volta — mais do que perdeu</span></li>
+            <li class="anim d2"><span class="xi">❌</span><span>Sente que seu metabolismo "parou" depois dos 30 e nada funciona mais</span></li>
+            <li class="anim d3"><span class="xi">❌</span><span>A barriga teima em não sair mesmo malhando e se sacrificando</span></li>
+            <li class="anim d4"><span class="xi">❌</span><span>Acorda cansada mesmo dormindo o suficiente — sem energia para o dia</span></li>
+            <li class="anim d5"><span class="xi">❌</span><span>Já desistiu de acreditar que pode emagrecer de verdade e manter</span></li>
+        </ul>
+        <div class="anim d6">
+            <span class="pain-close">A culpa NÃO é sua. É biológica. Tem solução.</span>
+        </div>
+    </div>
+</section>
+
+<!-- === SEÇÃO 4: MECANISMO === -->
+<section id="mechanism">
+    <div class="wrap">
+        <span class="tag anim">A raiz do problema</span>
+        <h2 class="anim d1">Por que as dietas normais <em>NUNCA</em> funcionam<br>para mulheres acima dos 30</h2>
+        <p class="sub2 anim d2">Não é falta de força de vontade. É o seu ciclo hormonal sabotando tudo.</p>
+
+        <p class="mech-label anim">O Ciclo Vicioso que te prende</p>
+
+        <!-- SVG CICLO VICIOSO -->
+        <div class="cycle-wrap anim">
+            <svg id="cycle-svg" viewBox="-5 -5 410 410" width="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                        <path d="M0,0 L0,6 L8,3 z" fill="#FF2D6B"/>
+                    </marker>
+                </defs>
+
+                <!-- Background ring -->
+                <circle cx="200" cy="200" r="140" fill="none" stroke="#EDE0FF" stroke-width="2" stroke-dasharray="6,5"/>
+
+                <!-- ARROW PATHS (animated via JS) -->
+                <path class="cyc-path" d="M248,76 Q316,102 336,172" fill="none" stroke="#FF2D6B" stroke-width="2.5" marker-end="url(#arr)" style="stroke-dasharray:160;stroke-dashoffset:160"/>
+                <path class="cyc-path" d="M338,228 Q316,300 248,332" fill="none" stroke="#FF2D6B" stroke-width="2.5" marker-end="url(#arr)" style="stroke-dasharray:160;stroke-dashoffset:160"/>
+                <path class="cyc-path" d="M152,332 Q84,302 62,228" fill="none" stroke="#FF2D6B" stroke-width="2.5" marker-end="url(#arr)" style="stroke-dasharray:160;stroke-dashoffset:160"/>
+                <path class="cyc-path" d="M62,172 Q84,100 152,70" fill="none" stroke="#FF2D6B" stroke-width="2.5" marker-end="url(#arr)" style="stroke-dasharray:160;stroke-dashoffset:160"/>
+
+                <!-- NODE: Restrição (top) -->
+                <circle cx="200" cy="55" r="46" fill="#3D0066"/>
+                <text x="200" y="50" text-anchor="middle" fill="#fff" font-family="Sora,sans-serif" font-weight="700" font-size="12.5">Restrição</text>
+                <text x="200" y="66" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Inter,sans-serif" font-size="9.5">Corta calorias</text>
+
+                <!-- NODE: Compulsão (right) -->
+                <circle cx="355" cy="200" r="46" fill="#FF2D6B"/>
+                <text x="355" y="195" text-anchor="middle" fill="#fff" font-family="Sora,sans-serif" font-weight="700" font-size="12.5">Compulsão</text>
+                <text x="355" y="211" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Inter,sans-serif" font-size="9.5">Cérebro reage</text>
+
+                <!-- NODE: Culpa (bottom) -->
+                <circle cx="200" cy="345" r="46" fill="#3D0066"/>
+                <text x="200" y="340" text-anchor="middle" fill="#fff" font-family="Sora,sans-serif" font-weight="700" font-size="12.5">Culpa</text>
+                <text x="200" y="356" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Inter,sans-serif" font-size="9.5">Se culpa</text>
+
+                <!-- NODE: Frustração (left) -->
+                <circle cx="45" cy="200" r="46" fill="#FF2D6B"/>
+                <text x="45" y="195" text-anchor="middle" fill="#fff" font-family="Sora,sans-serif" font-weight="700" font-size="11">Frustração</text>
+                <text x="45" y="211" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Inter,sans-serif" font-size="9.5">Desiste</text>
+
+                <!-- Center -->
+                <text x="200" y="194" text-anchor="middle" fill="#3D0066" font-family="Sora,sans-serif" font-weight="800" font-size="15">Ciclo</text>
+                <text x="200" y="213" text-anchor="middle" fill="#FF2D6B" font-family="Sora,sans-serif" font-weight="800" font-size="15">Vicioso</text>
+            </svg>
+        </div>
+
+        <div class="mech-text anim">
+            <p>Nas primeiras <strong>2 horas após acordar</strong>, seu corpo passa por um pico de <strong>cortisol matinal</strong> — o hormônio do estresse que, em mulheres acima dos 30, sinaliza ao organismo para <strong>armazenar gordura</strong> na barriga, quadril e braços.</p>
+            <p>Essa <strong>janela metabólica crítica</strong> está sendo desperdiçada todos os dias. Enquanto você toma café com pão, seu hormônio já decidiu onde vai guardar a gordura das próximas 18 horas.</p>
+        </div>
+
+        <!-- SVG TIMELINE -->
+        <p class="mech-label anim">Sem Protocolo vs Com Protocolo — primeiras 2h do dia</p>
+        <div class="timeline-wrap anim">
+            <svg viewBox="0 0 620 200" width="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <!-- Time axis labels -->
+                <text x="80"  y="18" font-family="Inter,sans-serif" font-size="11" fill="#888" text-anchor="middle">Acordar</text>
+                <text x="220" y="18" font-family="Inter,sans-serif" font-size="11" fill="#888" text-anchor="middle">30 min</text>
+                <text x="380" y="18" font-family="Inter,sans-serif" font-size="11" fill="#888" text-anchor="middle">1h</text>
+                <text x="540" y="18" font-family="Inter,sans-serif" font-size="11" fill="#888" text-anchor="middle">2h</text>
+
+                <!-- Vertical tick lines -->
+                <line x1="80"  y1="24" x2="80"  y2="188" stroke="#eee" stroke-width="1.5" stroke-dasharray="5,4"/>
+                <line x1="220" y1="24" x2="220" y2="188" stroke="#eee" stroke-width="1.5" stroke-dasharray="5,4"/>
+                <line x1="380" y1="24" x2="380" y2="188" stroke="#eee" stroke-width="1.5" stroke-dasharray="5,4"/>
+                <line x1="540" y1="24" x2="540" y2="188" stroke="#eee" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+                <!-- ROW LABEL: SEM -->
+                <text x="8" y="58"  font-family="Sora,sans-serif" font-weight="700" font-size="11" fill="#FF2D6B">SEM</text>
+                <text x="8" y="72"  font-family="Sora,sans-serif" font-weight="700" font-size="11" fill="#FF2D6B">PROT.</text>
+
+                <!-- Bar SEM -->
+                <rect x="80" y="38" width="480" height="38" rx="9" fill="rgba(255,45,107,0.12)"/>
+                <rect x="80" y="38" width="480" height="38" rx="9" fill="none" stroke="#FF2D6B" stroke-width="1.8"/>
+                <text x="170" y="61" font-family="Inter,sans-serif" font-size="11" fill="#CC0044" font-weight="600">Cortisol alto → acúmulo de gordura → metabolismo travado</text>
+
+                <!-- Arrow middle -->
+                <text x="310" y="110" text-anchor="middle" font-family="Sora,sans-serif" font-size="22" fill="#3D0066">↕</text>
+                <text x="310" y="100" text-anchor="middle" font-family="Sora,sans-serif" font-size="10" font-weight="700" fill="#3D0066">A DIFERENÇA</text>
+
+                <!-- ROW LABEL: COM -->
+                <text x="8" y="148" font-family="Sora,sans-serif" font-weight="700" font-size="11" fill="#00C853">COM</text>
+                <text x="8" y="162" font-family="Sora,sans-serif" font-weight="700" font-size="11" fill="#00C853">PROT.</text>
+
+                <!-- Bar COM -->
+                <rect x="80" y="128" width="480" height="50" rx="9" fill="rgba(0,200,83,0.1)"/>
+                <rect x="80" y="128" width="480" height="50" rx="9" fill="none" stroke="#00C853" stroke-width="1.8"/>
+                <text x="90" y="148" font-family="Inter,sans-serif" font-size="11" fill="#007A30" font-weight="600">Gelatina + Chia + Canela em jejum</text>
+                <text x="90" y="165" font-family="Inter,sans-serif" font-size="11" fill="#007A30" font-weight="600">→ cortisol bloqueado → queima ativa por até 6h</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- === SEÇÃO 5: SOLUÇÃO === -->
+<section id="solution">
+    <div class="wrap">
+        <span class="tag anim">O protocolo</span>
+        <h2 class="anim d1">O Protocolo Gelatina Detox: 3 Minutos. Toda Manhã. Resultados Reais.</h2>
+
+        <div class="proto-cards">
+            <div class="proto-card anim d1">
+                <span class="ci">🥄</span>
+                <h3>1. Prepare</h3>
+                <p>Misture gelatina sem açúcar + chia + canela + água morna. 3 minutos. Ingredientes de qualquer mercado, custo mínimo.</p>
+            </div>
+            <div class="proto-card anim d2">
+                <span class="ci">⏰</span>
+                <h3>2. Tome em Jejum</h3>
+                <p>Consuma nos primeiros 20 minutos após acordar — quando a janela metabólica está aberta e o cortisol ainda pode ser bloqueado.</p>
+            </div>
+            <div class="proto-card anim d3">
+                <span class="ci">🔥</span>
+                <h3>3. Ative o Metabolismo</h3>
+                <p>A combinação bloqueia o pico de cortisol e mantém a queima de gordura ativa por até 6 horas — sem academia, sem dieta.</p>
+            </div>
+        </div>
+
+        <div class="chart-box anim">
+            <h3>Queima de Gordura: Sem Protocolo vs Com Protocolo</h3>
+            <div class="bar-chart" id="bar-chart">
+                <div class="bar-item">
+                    <div class="bar-val" style="color:#999">23%</div>
+                    <div class="bar b-low"></div>
+                    <div class="bar-lbl">Sem Protocolo</div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-val" style="color:#00C853">+340%</div>
+                    <div class="bar b-high"></div>
+                    <div class="bar-lbl">Com Protocolo</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- === SEÇÃO 6: WEBAPP === -->
+<section id="webapp">
+    <div class="wrap">
+        <span class="tag anim">O que você recebe</span>
+        <h2 class="anim d1">Você não recebe um Ebook. Você recebe um WebApp completo.</h2>
+        <p class="sub3 anim d2">Acesse do celular sem instalar nada. Interativo, personalizado, pronto para usar agora.</p>
+
+        <div class="webapp-layout">
+            <!-- Phone Mockup -->
+            <div class="phone anim">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                    <div class="papp-hdr">🥄 Método Gelatina Detox</div>
+                    <div class="papp-item"><div class="dot dot-g"></div>Protocolo de Hoje</div>
+                    <div class="papp-item"><div class="dot dot-p"></div>Dia 14 de 30</div>
+                    <div class="papp-item"><div class="dot dot-d"></div>Calculadora TMB</div>
+                    <div class="papp-item"><div class="dot dot-g"></div>Cronograma</div>
+                    <div class="papp-item"><div class="dot dot-p"></div>Receitas Variações</div>
+                    <div class="papp-tag">Progresso do dia</div>
+                    <div class="pbar"><div class="pbar-fill"></div></div>
+                    <div class="pbar-lbl">47% concluído</div>
+                </div>
+            </div>
+
+            <!-- Features List -->
+            <div class="feat-list">
+                <h3>Tudo que está incluído:</h3>
+
+                <div class="feat-item anim">
+                    <div class="feat-ico green">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#00C853" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="feat-txt">
+                        <strong>Protocolo passo a passo interativo</strong>
+                        <span>Cada etapa explicada com clareza, guiada direto no celular</span>
+                    </div>
+                </div>
+
+                <div class="feat-item anim d1">
+                    <div class="feat-ico green">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#00C853" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="feat-txt">
+                        <strong>Calculadora do seu metabolismo basal</strong>
+                        <span>Descubra sua TMB e ajuste o protocolo ao seu corpo</span>
+                    </div>
+                </div>
+
+                <div class="feat-item anim d2">
+                    <div class="feat-ico green">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#00C853" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="feat-txt">
+                        <strong>Cronograma de 30 dias personalizado</strong>
+                        <span>Planejamento completo com evolução gradual e objetivos</span>
+                    </div>
+                </div>
+
+                <div class="feat-item anim d3">
+                    <div class="feat-ico green">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#00C853" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="feat-txt">
+                        <strong>Tracker diário — marque cada dia concluído</strong>
+                        <span>Acompanhe seu progresso e mantenha a consistência</span>
+                    </div>
+                </div>
+
+                <div class="feat-item anim d4">
+                    <div class="feat-ico green">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#00C853" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="feat-txt">
+                        <strong>Guia dos ativos: gelatina, chia e canela</strong>
+                        <span>Mecanismos de cada ingrediente explicados com clareza</span>
+                    </div>
+                </div>
+
+                <div class="feat-item anim d5">
+                    <div class="feat-ico green">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#00C853" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="feat-txt">
+                        <strong>Receitas — variações do protocolo</strong>
+                        <span>Sem enjoar — sabores diferentes para cada semana</span>
+                    </div>
+                </div>
+
+                <div class="feat-item anim d6">
+                    <div class="feat-ico star">
+                        <svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 1l1.9 4.9H15l-4 3 1.5 4.6L8 11l-4.5 2.5L5 9 1 6h5.1z" fill="#FF6B00"/></svg>
+                    </div>
+                    <div class="feat-txt">
+                        <strong>🎁 BÔNUS: Alimentos que BLOQUEIAM o metabolismo</strong>
+                        <span>Descubra o que estava sabotando tudo — e elimine de vez</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- === SEÇÃO 7: PROVA SOCIAL === -->
+<section id="social">
+    <div class="wrap">
+        <span class="tag anim">Resultados reais</span>
+        <h2 class="anim d1">Mulheres que já transformaram o corpo</h2>
+        <p class="sub4 anim d2">Histórias reais de quem não acreditava mais — até tentar.</p>
+
+        <div class="test-scroll">
+            <div class="t-card anim">
+                <div class="t-hdr">
+                    <div class="avatar" style="background:linear-gradient(135deg,#3D0066,#FF2D6B)">MC</div>
+                    <div class="t-info">
+                        <div class="tname">Márcia Carvalho</div>
+                        <div class="tcity">São Paulo, SP</div>
+                    </div>
+                </div>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <span class="rbadge">Perdeu 5,2kg em 3 semanas</span>
+                <p class="t-text">"Não acreditei de início, achei que era mais uma promessa vazia. Fiz por 3 semanas seguidas e a barriga foi sumindo. Meu médico me perguntou o que eu estava fazendo diferente!"</p>
+            </div>
+
+            <div class="t-card anim d1">
+                <div class="t-hdr">
+                    <div class="avatar" style="background:linear-gradient(135deg,#FF2D6B,#FF7043)">FS</div>
+                    <div class="t-info">
+                        <div class="tname">Fernanda Silva</div>
+                        <div class="tcity">Curitiba, PR</div>
+                    </div>
+                </div>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <span class="rbadge">Perdeu 7,1kg em 5 semanas</span>
+                <p class="t-text">"Tenho 42 anos e pensava que meu metabolismo nunca mais ia funcionar. Estou no dia 35 do protocolo e perdi 7 quilos. Minha calça 44 está grande agora!"</p>
+            </div>
+
+            <div class="t-card anim d2">
+                <div class="t-hdr">
+                    <div class="avatar" style="background:linear-gradient(135deg,#00C853,#007A30)">RO</div>
+                    <div class="t-info">
+                        <div class="tname">Regina Oliveira</div>
+                        <div class="tcity">Belo Horizonte, MG</div>
+                    </div>
+                </div>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <span class="rbadge">Perdeu 4,8kg em 2 semanas</span>
+                <p class="t-text">"Tenho 51 anos. Há anos tentava de tudo. Comecei o protocolo da gelatina logo ao acordar. Em 2 semanas, 4,8kg menos. Minha energia voltou — eu acordava exausta antes!"</p>
+            </div>
+
+            <div class="t-card anim d3">
+                <div class="t-hdr">
+                    <div class="avatar" style="background:linear-gradient(135deg,#6B0099,#3D0066)">AP</div>
+                    <div class="t-info">
+                        <div class="tname">Ana Paula Mendes</div>
+                        <div class="tcity">Rio de Janeiro, RJ</div>
+                    </div>
+                </div>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <span class="rbadge">Perdeu 6,3kg em 4 semanas</span>
+                <p class="t-text">"Fiz cirurgia bariátrica e continuei engordando. Tentei mil dietas. O protocolo da gelatina foi a única coisa que funcionou de verdade. Já indiquei para 8 amigas!"</p>
+            </div>
+
+            <div class="t-card anim d4">
+                <div class="t-hdr">
+                    <div class="avatar" style="background:linear-gradient(135deg,#FF2D6B,#3D0066)">JR</div>
+                    <div class="t-info">
+                        <div class="tname">Juliana Rodrigues</div>
+                        <div class="tcity">Salvador, BA</div>
+                    </div>
+                </div>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <span class="rbadge">Perdeu 3,5kg em 10 dias</span>
+                <p class="t-text">"Comprei quase sem acreditar. Em 10 dias, 3,5kg e a calça que não fechava ficou sobrando. O webapp é muito fácil de usar — adoro marcar cada dia no tracker!"</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- === SEÇÃO 8: OFERTA === -->
+<section id="oferta">
+    <div class="wrap">
+        <span class="tag anim" style="color:#a8d8ff">🚀 oferta de lançamento</span>
+        <h2 class="anim d1">Garante o Método Gelatina Detox com desconto máximo</h2>
+        <p class="offer-sub anim d2">Quando o timer zerar, o preço volta para R$97,00. Sem exceções.</p>
+
+        <div class="val-stack anim d2">
+            <div class="val-row"><span class="vn">WebApp Completo — Protocolo Interativo</span><span class="vp">R$97,00</span></div>
+            <div class="val-row"><span class="vn">Calculadora de Metabolismo Basal</span><span class="vp">R$47,00</span></div>
+            <div class="val-row"><span class="vn">Cronograma de 30 Dias Personalizado</span><span class="vp">R$67,00</span></div>
+            <div class="val-row"><span class="vn">Tracker + Guia dos Ativos</span><span class="vp">R$47,00</span></div>
+            <div class="val-row"><span class="vn">🎁 Bônus: Alimentos que Bloqueiam o Metabolismo</span><span class="vp">R$33,00</span></div>
+            <div class="val-row" style="border-top:1px solid rgba(255,255,255,0.3);margin-top:6px">
+                <span class="vn" style="font-weight:700;opacity:1;font-size:1rem">VALOR TOTAL</span>
+                <span class="vp" style="font-size:1.1rem">R$291,00</span>
+            </div>
+        </div>
+
+        <div class="price-box anim d3">
+            <div class="price-old">De R$97,00</div>
+            <div class="price-lbl">Por apenas</div>
+            <div class="price-new"><sup>R$</sup>19<small>,90</small></div>
+            <div class="price-note">em uma única parcela — sem assinatura</div>
+        </div>
+
+        <div class="badges anim d4">
+            <div class="bdg">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="7" width="12" height="8" rx="2" stroke="#fff" stroke-width="1.5"/><path d="M5 7V5a3 3 0 016 0v2" stroke="#fff" stroke-width="1.5"/></svg>
+                Compra 100% Segura
+            </div>
+            <div class="bdg">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                7 Dias de Garantia
+            </div>
+            <div class="bdg">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="3" y="2" width="10" height="13" rx="2" stroke="#fff" stroke-width="1.5"/><path d="M6 5h4M6 8h4M6 11h2" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+                Acesso Imediato
+            </div>
+        </div>
+
+        <div class="cta-wrap anim d5">
+            <a href="https://pay.wiapy.com/MI-xI7yNM5" class="cta big">SIM! QUERO O PROTOCOLO POR R$19,90 →</a>
+            <div class="urg-mini">⏰ Oferta expira em: <span id="cd2">24h 00m 00s</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- === SEÇÃO 10: FAQ === -->
+<section id="faq">
+    <div class="wrap">
+        <h2 class="anim">Perguntas Frequentes</h2>
+
+        <div class="faq-list">
+            <div class="faq-item anim">
+                <button class="faq-q">
+                    Para quem é o Protocolo Gelatina Detox?
+                    <svg class="chev" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7l5 5 5-5" stroke="#3D0066" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div class="faq-a">
+                    <div class="faq-a-inner">O protocolo foi desenvolvido para mulheres com dificuldade de emagrecer por metabolismo lento, desregulação hormonal ou frustração com dietas convencionais. Funciona especialmente bem acima dos 30 anos. Se você tem menos de 18 anos, está grávida ou amamentando, consulte um médico antes.</div>
+                </div>
+            </div>
+
+            <div class="faq-item anim d1">
+                <button class="faq-q">
+                    Como vou acessar o WebApp após a compra?
+                    <svg class="chev" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7l5 5 5-5" stroke="#3D0066" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div class="faq-a">
+                    <div class="faq-a-inner">Imediatamente após a confirmação do pagamento, você receberá um e-mail com o link de acesso. Não precisa baixar nada — é um aplicativo web que funciona direto pelo navegador do celular ou computador. Acesso vitalício, qualquer dispositivo.</div>
+                </div>
+            </div>
+
+            <div class="faq-item anim d2">
+                <button class="faq-q">
+                    Funciona para quem tem mais de 50 anos?
+                    <svg class="chev" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7l5 5 5-5" stroke="#3D0066" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div class="faq-a">
+                    <div class="faq-a-inner">Sim! O protocolo foi testado em mulheres dos 45 aos 60 anos, inclusive pós-menopausa. Nessa fase o cortisol matinal é ainda mais agressivo — o que significa que a janela metabólica é ainda mais importante. Várias clientes acima dos 50 relataram os resultados mais expressivos.</div>
+                </div>
+            </div>
+
+            <div class="faq-item anim d3">
+                <button class="faq-q">
+                    Preciso de academia ou dieta junto?
+                    <svg class="chev" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7l5 5 5-5" stroke="#3D0066" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div class="faq-a">
+                    <div class="faq-a-inner">Não. O protocolo funciona sem academia e sem dieta restritiva. Claro que hábitos saudáveis potencializam qualquer resultado, mas não são obrigatórios para ver efeito. A proposta é exatamente essa: 3 minutos toda manhã, independente da sua rotina.</div>
+                </div>
+            </div>
+
+            <div class="faq-item anim d4">
+                <button class="faq-q">
+                    E se não funcionar para mim?
+                    <svg class="chev" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7l5 5 5-5" stroke="#3D0066" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div class="faq-a">
+                    <div class="faq-a-inner">Você tem 7 dias de garantia incondicional. Se após seguir o protocolo você não ficar satisfeita, basta entrar em contato por e-mail e devolvemos 100% do valor pago, sem nenhuma pergunta. Você não tem nada a perder — só a ganhar.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA final dentro do FAQ -->
+        <div style="text-align:center;margin-top:48px" class="anim">
+            <a href="https://pay.wiapy.com/MI-xI7yNM5" class="cta big">QUERO COMEÇAR AGORA POR R$19,90 →</a>
+        </div>
+    </div>
+</section>
+
+<!-- === SEÇÃO 11: RODAPÉ === -->
+<footer id="footer">
+    <div class="foot-links">
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos de Uso</a>
+        <a href="#">Contato</a>
+    </div>
+    <p>© 2026 Método Gelatina Detox — Todos os direitos reservados.</p>
+    <br>
+    <p>Os resultados apresentados são individuais e podem variar. As informações contidas neste site não substituem orientação médica ou nutricional profissional. Consulte sempre um especialista de saúde antes de iniciar qualquer protocolo alimentar. Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença.</p>
+    <br>
+    <p>Este site não é afiliado ao Facebook™, Instagram™ ou Google™. As marcas registradas pertencem aos seus respectivos proprietários. Esta página é de cunho informativo e comercial.</p>
+</footer>
+
+<script>
+    /* === COUNTDOWN COM LOCALSTORAGE === */
+    (function () {
+        var KEY = 'gel_detox_expiry_v3';
+        var expiry = parseInt(localStorage.getItem(KEY), 10);
+        if (!expiry || expiry < Date.now()) {
+            expiry = Date.now() + 15 * 60 * 1000;
+            localStorage.setItem(KEY, expiry);
+        }
+        function pad(n) { return String(n).padStart(2, '0'); }
+        function tick() {
+            var rem = Math.max(0, expiry - Date.now());
+            var h = Math.floor(rem / 3600000);
+            var m = Math.floor((rem % 3600000) / 60000);
+            var s = Math.floor((rem % 60000) / 1000);
+            var str = pad(h) + 'h ' + pad(m) + 'm ' + pad(s) + 's';
+            var e1 = document.getElementById('cd1');
+            var e2 = document.getElementById('cd2');
+            if (e1) e1.textContent = str;
+            if (e2) e2.textContent = str;
+        }
+        tick();
+        setInterval(tick, 1000);
+    })();
+
+    /* === INTERSECTION OBSERVER — ANIMAÇÕES DE ENTRADA === */
+    var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+            if (e.isIntersecting) e.target.classList.add('in');
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.anim').forEach(function (el) { io.observe(el); });
+
+    /* === GRÁFICO DE BARRAS === */
+    var barIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+            if (e.isIntersecting) {
+                document.querySelectorAll('.bar').forEach(function (b) { b.classList.add('grow'); });
+                barIO.disconnect();
+            }
+        });
+    }, { threshold: 0.4 });
+    var bc = document.getElementById('bar-chart');
+    if (bc) barIO.observe(bc);
+
+    /* === SVG CICLO — DESENHA CAMINHOS AO ENTRAR NA TELA === */
+    var cycIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+            if (e.isIntersecting) {
+                document.querySelectorAll('.cyc-path').forEach(function (p, i) {
+                    setTimeout(function () {
+                        p.style.transition = 'stroke-dashoffset 0.75s ease';
+                        p.style.strokeDashoffset = '0';
+                    }, i * 280);
+                });
+                cycIO.disconnect();
+            }
+        });
+    }, { threshold: 0.3 });
+    var cs = document.getElementById('cycle-svg');
+    if (cs) cycIO.observe(cs);
+
+    /* === FAQ ACCORDION === */
+    document.querySelectorAll('.faq-q').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var item = btn.closest('.faq-item');
+            var ans  = item.querySelector('.faq-a');
+            var open = item.classList.contains('open');
+
+            document.querySelectorAll('.faq-item').forEach(function (fi) {
+                fi.classList.remove('open');
+                fi.querySelector('.faq-a').style.maxHeight = '0';
+            });
+
+            if (!open) {
+                item.classList.add('open');
+                ans.style.maxHeight = ans.scrollHeight + 'px';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
