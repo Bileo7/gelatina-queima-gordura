@@ -452,7 +452,7 @@ h1, h2, h3, h4 { font-family: 'Sora', sans-serif; }
 .val-row .vn { opacity: 0.85; text-align: left; }
 .val-row .vp { font-weight: 700; color: #a8ffb8; white-space: nowrap; }
 
-.price-box { text-align: center; margin-bottom: 30px; }
+.price-box { text-align: center; margin-bottom: 36px; padding: 8px 0; }
 .price-old { font-size: 1.15rem; text-decoration: line-through; opacity: 0.45; margin-bottom: 4px; }
 .price-lbl { font-size: 0.82rem; opacity: 0.65; margin-bottom: 4px; }
 .price-new { font-family: 'Sora', sans-serif; font-size: 3.6rem; font-weight: 800; color: var(--green); line-height: 1; }
